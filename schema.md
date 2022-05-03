@@ -9,11 +9,11 @@
         - Address (from Address schema)
     ]
     - orders : [
-        - Address (from Address schema)
+        - Order (from Order schema)
     ]
 
 - ## Product
-    - name : Schema
+    - name : String
     - stickerPrice : Number
     - markedPrice : Number
     - category : Category (from Category schema)
@@ -35,7 +35,7 @@
         product : Product (from Product schema)      
     ]
     - total : Number
-    - status : [ "payment_pending", "payment_success", "payment_failed" ]
+    - status : [ "payment_pending", "payment_success", "payment_errored" ]
 
 - ## Address
     - houseNumber : String 
