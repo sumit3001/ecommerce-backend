@@ -5,6 +5,7 @@
     - lastName : String
     - email : String
     - password : String (Hashed)
+    - role : Number
     - address : [
         - Address (from Address schema)
     ]
