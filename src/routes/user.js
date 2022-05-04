@@ -2,7 +2,7 @@ import express from "express";
 import {User} from '../services/mongodb/schema'
 import bcryptjs from "bcryptjs"; // used to make password hashed
 import { validationResult, body } from "express-validator"; // used to for validation
-import { singJWT } from "../utils/index";
+import { singJWT, verifyJWT } from "../utils/index";
 
 const router = express.Router();
 
@@ -173,6 +173,43 @@ router.get(
       return res.json({
         data: {
           users: [],
+        },
+        success: false,
+        message: error.message,
+      });
+    }
+  }
+);
+
+/*
+type : POST
+path : /user/profile/me
+body : none
+query: none
+description : Route for user's profile
+header: authorization = bearer token
+*/
+
+router.get(
+  "/profile/me",
+  async (req, res) => {
+    try {
+      const token = req.headers['authorization'].split(' ')[1];
+      const {id} = verifyJWT(token);
+      const user = await User.findOne({ _id:id });
+
+      return res.json({
+        data: {
+          user,
+        },
+        success: true,
+        message: "User profile fetched successfully",
+      });
+    } catch (error) {
+      console.log(error);
+      return res.json({
+        data: {
+          user: null,
         },
         success: false,
         message: error.message,

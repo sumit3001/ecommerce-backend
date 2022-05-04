@@ -10,3 +10,12 @@ export const singJWT = (payload = {}, expiry = "24h") => {
     return null;
   }
 };
+
+export const verifyJWT = (token) => {
+  try {
+    const data = jwt.verify(token, process.env.JWT_SECRET);
+    return data;
+  } catch (error) {
+    return null;
+  }
+};
