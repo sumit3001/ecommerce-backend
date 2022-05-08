@@ -14,7 +14,7 @@ app.use(express.json());
 app.use('/user', userRoute);
 
 app.get('/', (req,res)=>{
-    res.send(`server Deployed on PORT ${PORT}`)
+    res.send(`server Deployed on PORT ${PORT}` )
 })
 
 app.listen(PORT, ()=>{
