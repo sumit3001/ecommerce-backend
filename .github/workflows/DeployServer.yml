@@ -14,3 +14,11 @@ jobs:
     steps: 
       - name: test
         run: echo "hi from github workflow"
+      - name: list before fetch
+        run: ls
+      - name: get repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: list after fetch
+        run: ls
