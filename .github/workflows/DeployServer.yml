@@ -23,6 +23,6 @@ jobs:
       - name: add github email
         run: git config --global user.email "svsumitvishwakarma@gmail.com"
       - name: add heroku remote
-        run: git remote add heroku https://heroku:210c51bc-e5d8-4d7a-ad80-7c6f4b8142be@git.heroku.com/stark-gorge-91969.git
+        run: git remote add heroku https://heroku:${{secrets.HEROKU_API_KEY}}@git.heroku.com/${{secrets.HEROKU_APP_NAME}}.git
       - name: push to heroku
         run: git push heroku master --force
