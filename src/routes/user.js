@@ -1,8 +1,10 @@
 import express from "express";
-import {User} from '../services/mongodb/schema'
+import {User} from '../services/mongodb/schema';
 import bcryptjs from "bcryptjs"; // used to make password hashed
 import { validationResult, body } from "express-validator"; // used to for validation
 import { singJWT, verifyJWT } from "../utils/index";
+import { isAuthenticated } from "../services/middlewares/isAuthenticated";
+import { isAdmin } from '../services/middlewares/isAdmin';
 
 const router = express.Router();
 
@@ -156,6 +158,8 @@ description : Route to get all user
 
 router.get(
   "/all",
+  isAuthenticated,
+  isAdmin,
   // make sure only admin can acces this route
   async (req, res) => {
     try {
@@ -192,6 +196,7 @@ header: authorization = bearer token
 
 router.get(
   "/profile/me",
+  isAuthenticated,
   async (req, res) => {
     try {
       const token = req.headers['authorization'].split(' ')[1];
