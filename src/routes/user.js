@@ -128,9 +128,15 @@ router.post(
         role: user.role,
       })
 
+      await user.save();
+
       return res.json({
         data: {
           token,
+          user: {
+            email: user.email,
+            id: user._id
+          }
         },
         success: true,
         message: "User logged in successfully",
