@@ -60,7 +60,7 @@ router.post(
 
 /*
 type : GET
-path : /category
+path : /category/all
 body : none
 query: none
 description : Route to fetch all category 
