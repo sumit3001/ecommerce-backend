@@ -7,6 +7,7 @@ import categoryRoutes from './routes/category';
 import productRoutes from './routes/product';
 import addressRoutes from './routes/address';
 import orderRoutes from './routes/order';
+import cors from 'cors';
 
 const app = express();
 
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 8080
 connectDB();
 
 app.use(express.json());
+app.use(cors());
 app.use('/user', userRoutes);
 app.use('/category', categoryRoutes);
 app.use('/product', productRoutes);
