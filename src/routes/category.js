@@ -24,7 +24,6 @@ router.post(
       const { errors } = validationResult(req);
       console.log(errors);
       if (errors.length > 0)
-        // validation
         return res.json({
           data: {
             category: null,
