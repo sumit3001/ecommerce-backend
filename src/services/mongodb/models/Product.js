@@ -33,7 +33,7 @@ const ProductSchema = new mongoose.Schema(
     },
     compatibleWith: {
       type: String,
-      enum: ["iphone", "iwatch", "mac"],
+      enum: ["Iphone", "Samsung", "Vivo", "Realme"],
     },
   },
   {

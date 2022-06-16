@@ -18,6 +18,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - name: test
+        run: echo "hi from github workflow"
       - name: add github username
         run: git config --global user.name "youngmansumit"
       - name: add github email
