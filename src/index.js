@@ -24,7 +24,7 @@ app.use('/address', addressRoutes);
 app.use('/order', orderRoutes);
 
 app.get('/', (req,res)=>{
-    res.send(`server Deployed by github actions ${PORT}`)
+    res.send(`server Deployed at ${PORT}`)
 })
 
 app.listen(PORT, ()=>{
