@@ -1,12 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import { connectDB } from './services/mongodb/connectDB';
+import { connectDB } from './services/mongodb/connectDB.js';
 dotenv.config('./.env');
-import userRoutes from './routes/user';
-import categoryRoutes from './routes/category';
-import productRoutes from './routes/product';
-import addressRoutes from './routes/address';
-import orderRoutes from './routes/order';
+import userRoutes from './routes/user.js';
+import categoryRoutes from './routes/category.js';
+import productRoutes from './routes/product.js';
+import addressRoutes from './routes/address.js';
+import orderRoutes from './routes/order.js';
 import cors from 'cors';
 
 const app = express();

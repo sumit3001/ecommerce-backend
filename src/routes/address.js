@@ -1,8 +1,8 @@
 import express from "express";
 const router = express.Router();
-import { isAuthenticated } from "../services/middlewares/isAuthenticated";
+import { isAuthenticated } from "../services/middlewares/isAuthenticated.js";
 import { body, validationResult } from "express-validator";
-import { Address, User } from "../services/mongodb/schema";
+import { Address, User } from "../services/mongodb/schema.js";
 
 /*
 type : POST

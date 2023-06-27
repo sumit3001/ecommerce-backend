@@ -1,1 +1,1 @@
-export * from './jwt'; // * means everything in jwt
+export * from './jwt.js'; // * means everything in jwt

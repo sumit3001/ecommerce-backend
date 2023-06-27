@@ -1,8 +1,8 @@
 import express from "express";
-import { isAuthenticated } from "../services/middlewares/isAuthenticated";
-import { isAdmin } from "../services/middlewares/isAdmin";
+import { isAuthenticated } from "../services/middlewares/isAuthenticated.js";
+import { isAdmin } from "../services/middlewares/isAdmin.js";
 import { body, validationResult } from "express-validator";
-import { Product } from "../services/mongodb/schema";
+import { Product } from "../services/mongodb/schema.js";
 const router = express.Router();
 
 /*

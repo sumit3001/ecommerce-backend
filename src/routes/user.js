@@ -1,10 +1,10 @@
 import express from "express";
-import {User} from '../services/mongodb/schema';
+import {User} from '../services/mongodb/schema.js';
 import bcryptjs from "bcryptjs"; // used to make password hashed
 import { validationResult, body } from "express-validator"; // used to for validation
-import { singJWT, verifyJWT } from "../utils/index";
-import { isAuthenticated } from "../services/middlewares/isAuthenticated";
-import { isAdmin } from '../services/middlewares/isAdmin';
+import { singJWT, verifyJWT } from "../utils/index.js";
+import { isAuthenticated } from "../services/middlewares/isAuthenticated.js";
+import { isAdmin } from '../services/middlewares/isAdmin.js';
 
 const router = express.Router();
 

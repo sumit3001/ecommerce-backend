@@ -1,4 +1,4 @@
-import { verifyJWT } from "../../utils";
+import { verifyJWT } from "../../utils/index.js";
 
 export const isAdmin = (req, res, next) => {
   const token = req.headers["authorization"].split(" ")[1];

@@ -1,9 +1,9 @@
 import express from "express";
 const router = express.Router();
-import { isAuthenticated } from "../services/middlewares/isAuthenticated";
-import { isAdmin } from "../services/middlewares/isAdmin";
+import { isAuthenticated } from "../services/middlewares/isAuthenticated.js";
+import { isAdmin } from "../services/middlewares/isAdmin.js";
 import { body, validationResult } from "express-validator";
-import { Category, Product } from "../services/mongodb/schema";
+import { Category, Product } from "../services/mongodb/schema.js";
 
 /*
 type : POST

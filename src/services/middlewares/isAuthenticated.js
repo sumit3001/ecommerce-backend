@@ -1,4 +1,4 @@
-import { verifyJWT } from "../../utils";
+import { verifyJWT } from "../../utils/index.js";
 
 export const isAuthenticated = (req, res, next) => {
   try {
